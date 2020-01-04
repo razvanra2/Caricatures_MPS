@@ -29,11 +29,11 @@ namespace Caricatures_Project
             {
                 using (var img = new Bitmap(Image.FromStream(ms)))
                 {
-                    using (var blackAndWhiteImg = MedianFilter(img, 13))
+                    using (var caricatureImage = MedianFilter(img, 13))
                     {
                         using (var res = new MemoryStream())
                         {
-                            blackAndWhiteImg.Save(res, ImageFormat.Png);
+                            caricatureImage.Save(res, ImageFormat.Png);
                             var imagAsArr = res.ToArray();
                             return req.CreateResponse(HttpStatusCode.OK, Convert.ToBase64String(imagAsArr));
                         }
