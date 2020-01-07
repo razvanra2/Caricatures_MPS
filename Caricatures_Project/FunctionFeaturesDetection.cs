@@ -57,8 +57,6 @@ namespace Caricatures_Project
             HttpResponseMessage response;
 
             // Request body
-            var img = Image.FromFile(@"C:\Users\a-rarad\Pictures\9980245.jpg");
-
             using (var content = new ByteArrayContent(imgBytes))
             {
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
